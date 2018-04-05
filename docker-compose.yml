@@ -17,8 +17,8 @@ services:
 
         # 映射80和443端口
     ports:
-      - "80:80"
-      - "443:443"
+      - "8000:80"
+      - "4430:443"
     networks:
       - frontend
 
@@ -48,7 +48,7 @@ services:
   mysql:
     image: hub.c.163.com/library/mysql:latest
     ports:
-      - "127.0.0.1:3306:3306"
+      - "127.0.0.1:33060:3306"
     volumes:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/my.cnf:/etc/my.cnf
@@ -63,7 +63,7 @@ services:
   redis:
     build: ./redis
     ports:
-      - "127.0.0.1:6379:6379"
+      - "127.0.0.1:63790:6379"
     networks:
       - backend      
     volumes:
